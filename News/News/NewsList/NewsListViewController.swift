@@ -18,23 +18,22 @@ class NewsListViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(UINib(nibName: "NewsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NewsCollectionViewCell")
+        guard let viewModel else { return }
+        
+        // insert title of Screen
+        title = viewModel.title
+
+        // registre all cell of CollectionView
+        registerCollectionView()
+
+        // insert bar navigation of Screen
+        configureBarItems()
+        // get list artciles
+        fetchNewsList()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let viewModel else { return }
-        // insert title of Screen
-        title = viewModel.title
-        // insert bar navigation of Screen
-        configureBarItems()
-        // get list artciles
-        viewModel.fetchNewsList(completionHandler: {
-            DispatchQueue.main.async {
-                // refresh screen after receiving data
-                self.collectionView.reloadData()
-            }
-        })
     }
 }
 
@@ -43,6 +42,21 @@ extension NewsListViewController {
     private func configureBarItems() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil)
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: nil)
+    }
+
+    private func registerCollectionView() {
+        collectionView.register(UINib(nibName: "NewsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NewsCollectionViewCell")
+    }
+
+    private func fetchNewsList() {
+        guard let viewModel else { return }
+
+        viewModel.fetchNewsList(completionHandler: {
+            DispatchQueue.main.async {
+                // refresh screen after receiving data
+                self.collectionView.reloadData()
+            }
+        })
     }
 }
 
@@ -69,7 +83,12 @@ extension NewsListViewController: UICollectionViewDataSource {
 
     // MARK: - UICollectionViewDelegate
 extension NewsListViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewModel,
+        let news = viewModel.newsList?.articles[indexPath.row] else { return }
+
+        goToNewsDetails(news)
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -80,5 +99,15 @@ extension NewsListViewController: UICollectionViewDelegateFlowLayout {
         // fixation size cell for collection view "NewsCollectionViewCell"
         return CGSize(width: Constants.screenWidth - 20, height: 300)
     }
-    
+}
+
+    // MARK: - Navigation
+extension NewsListViewController {
+    // GO To NewsDetailsViewController
+    func goToNewsDetails(_ news: News) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "NewsDetails", bundle:nil)
+        let newsDetailsViewController = storyBoard.instantiateViewController(withIdentifier: "NewsDetailsViewController") as! NewsDetailsViewController
+        newsDetailsViewController.viewModel = NewsDetailsViewModel(news: news)
+        self.navigationController?.pushViewController(newsDetailsViewController, animated: true)
+    }
 }
