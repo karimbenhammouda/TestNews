@@ -9,6 +9,5 @@ import Foundation
 
 struct NewsList: Decodable {
     let status: String?
-    let totalResults: Int?
     let articles: [News]
 }

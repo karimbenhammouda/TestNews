@@ -15,6 +15,8 @@ class NewsDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var sourceLinkLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var descriptionTitleLabel: UILabel!
+    @IBOutlet weak var contentTitleLabel: UILabel!
 
     // MARK: - Properties
     var viewModel: NewsDetailsViewModel?
@@ -27,8 +29,10 @@ class NewsDetailsViewController: UIViewController {
         setImage()
         titleLabel.text = viewModel.news.title
         setViewsAuthor()
+        descriptionTitleLabel.text = "descriptionTitle".localized()
         descriptionLabel.text = viewModel.news.description
         setupSourceLink()
+        contentTitleLabel.text = "contentTitle".localized()
         contentLabel.text = viewModel.news.content
     }
 
@@ -67,7 +71,7 @@ extension NewsDetailsViewController {
         sourceLinkLabel.isUserInteractionEnabled = true
         sourceLinkLabel.addGestureRecognizer(labelTap)
 
-        let string = String(format: "%@%@", "SourceLink".localized(), sourceName)
+        let string = String(format: "%@%@", "sourceLink".localized(), sourceName)
         let attrStri = NSMutableAttributedString.init(string: string)
         let nsRange = NSString(string: string)
                 .range(of: sourceName, options: String.CompareOptions.caseInsensitive)
@@ -76,6 +80,19 @@ extension NewsDetailsViewController {
     }
     
     @objc func linkLabelTapped(_ sender: UITapGestureRecognizer) {
-        
+        goToNewsSource()
+    }
+}
+
+// MARK: - Navigation
+extension NewsDetailsViewController {
+    // GO To NewsSourceViewController
+    func goToNewsSource() {
+        guard let url = viewModel?.news.url else { return }
+
+        let storyBoard: UIStoryboard = UIStoryboard(name: "NewsSource", bundle:nil)
+        let newsSourceViewController = storyBoard.instantiateViewController(withIdentifier: "NewsSourceViewController") as! NewsSourceViewController
+        newsSourceViewController.viewModel = NewsSourceViewModel(url: url)
+        self.navigationController?.present(newsSourceViewController, animated: true)
     }
 }

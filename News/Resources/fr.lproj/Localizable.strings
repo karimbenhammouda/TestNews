@@ -9,4 +9,6 @@
 "newsListTitle" = "Les Nouvelles";
 "publishedBy" = "Publié par: ";
 "date" = "le: ";
-"SourceLink" = "Pour vérifier le lien de la source: ";
+"sourceLink" = "Pour vérifier le lien de la source: ";
+"descriptionTitle" = "Déscription: ";
+"contentTitle" = "contenu: ";

@@ -7,17 +7,125 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "19F46629-D3D6-479C-BA76-B36DFDE2C534"
+            uuid = "C7BE7C1F-28E8-460E-91CE-577176301E02"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "News/News/NewsDetails/NewsDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "setViewsAuthor()"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "setImage()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C7BE7C1F-28E8-460E-91CE-577176301E02 - 1914ab73e5fe1cb7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News.NewsDetailsViewController.setImage() -&gt; ()"
+                  moduleName = "News.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karim/Desktop/TestNews/News/News/NewsDetails/NewsDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52">
+               </Location>
+               <Location
+                  uuid = "C7BE7C1F-28E8-460E-91CE-577176301E02 - 1914ab73e5fe1cb7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News.NewsDetailsViewController.setImage() -&gt; ()"
+                  moduleName = "News.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karim/Desktop/TestNews/News/News/NewsDetails/NewsDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07A256B3-CA4E-42FC-BC74-524B12AE6576"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News/News/NewsList/NewsListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "goToNewsDetails(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9EC469B1-1151-427C-ADCA-DB01E7479354"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News/News/NewsList/NewsListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71443EE4-EA0E-4133-A23C-EA29924973F9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News/Service/AllNews/AllNewsNetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "getNewsList(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "71443EE4-EA0E-4133-A23C-EA29924973F9 - 2b15e1cd13c19651"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News.AllNewsNetworkManager.getNewsList(completion: (Swift.Optional&lt;News.NewsList&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "News.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karim/Desktop/TestNews/News/Service/AllNews/AllNewsNetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16">
+               </Location>
+               <Location
+                  uuid = "71443EE4-EA0E-4133-A23C-EA29924973F9 - 81acd27acf3100ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; () in News.AllNewsNetworkManager.getNewsList(completion: (Swift.Optional&lt;News.NewsList&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "News.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karim/Desktop/TestNews/News/Service/AllNews/AllNewsNetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
