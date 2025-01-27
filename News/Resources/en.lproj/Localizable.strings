@@ -6,4 +6,6 @@
   
 */
 
-"NewsListTitle" = "The News";
+"newsListTitle" = "The News";
+"publishedBy" = "Publié by: ";
+"date" = "The: ";
