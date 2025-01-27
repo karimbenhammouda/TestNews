@@ -8,11 +8,18 @@
 import UIKit
 
 class NewsListViewController: UIViewController {
-    
+
+    var viewModel: NewsListViewModel?
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "NewsListTitle".localized()
+        guard let viewModel else { return }
+
+        title = viewModel.title
+        viewModel.fetchProductsList(completionHandler: {
+            print(viewModel.newsList)
+        })
     }
 
     override func viewWillAppear(_ animated: Bool) {
