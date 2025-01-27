@@ -9,4 +9,6 @@
 "newsListTitle" = "The News";
 "publishedBy" = "Publié by: ";
 "date" = "The: ";
-"SourceLink" = "To check the source link: ";
+"sourceLink" = "To check the source link: ";
+"descriptionTitle" = "Description: ";
+"contentTitle" = "content: ";
