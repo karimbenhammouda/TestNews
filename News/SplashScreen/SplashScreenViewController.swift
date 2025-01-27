@@ -43,8 +43,11 @@ class SplashScreenViewController: UIViewController {
 extension SplashScreenViewController {
     // GO To NewsListViewController
     func goToNewsList() {
-        let vc = UIStoryboard(name: "NewsList", bundle: nil).instantiateViewController(withIdentifier: "NewsListNavigationController")
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "NewsList", bundle:nil)
+        let newsListViewController = storyBoard.instantiateViewController(withIdentifier: "NewsListViewController") as! NewsListViewController
+        newsListViewController.viewModel = NewsListViewModel(title: "NewsListTitle".localized())
+        let navController = UINavigationController(rootViewController: newsListViewController)
+        navController.modalPresentationStyle = .fullScreen
+        self.view.window?.rootViewController = navController
     }
 }
