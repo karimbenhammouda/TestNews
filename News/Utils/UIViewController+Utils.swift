@@ -8,6 +8,9 @@
 import UIKit
 import Localize_Swift
 
+fileprivate let overlayViewTag = 999
+fileprivate let activityIndicatorTag = 1000
+
 extension UIViewController {
     // animate an image with a zoom in
     func animateZoomIn(imageView: UIImageView) {
