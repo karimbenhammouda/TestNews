@@ -37,9 +37,6 @@ class NewsAuthorView: UIView {
         guard let viewModel else { return }
         
         authorLabel.text = String(format: "%@%@%@", "publishedBy".localized(), "\n", viewModel.author ?? "")
-        if let dateString = viewModel.date {
-            let dateFormat = dateString.dateFormatter(dateString: dateString, style: .full)
-            dateLabel.text = String(format: "%@%@", "date".localized(), dateFormat ?? "")
-        }
+        dateLabel.text = viewModel.getDate()
     }
 }
