@@ -49,9 +49,6 @@ extension NewsCollectionViewCell {
         // insert date article
         dateLabel.adjustsFontSizeToFitWidth = false
         dateLabel.lineBreakMode = .byTruncatingTail
-        if let dateString = viewModel.date {
-            let dateFormat = dateString.dateFormatter(dateString: dateString, style: .long)
-            dateLabel.text = String(format: "%@%@", "date".localized(), dateFormat ?? "")
-        }
+        dateLabel.text = viewModel.getDate()
     }
 }
